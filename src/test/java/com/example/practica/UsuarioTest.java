@@ -32,7 +32,7 @@ class UsuarioServiceTest {
     @Test
     void generaIdAlGuardar() {
         Usuario u = new Usuario();
-        u.setNombre("Carlos");
+        u.setNombre("Miguel");
 
         Usuario guardado = service.crearUsuario(u);
 
