@@ -18,6 +18,7 @@ class UsuarioServiceTest {
     @Autowired
     UsuarioRepository repo;
 
+
     @Test
     void guardaUsuario() {
         Usuario u = new Usuario();
@@ -29,7 +30,25 @@ class UsuarioServiceTest {
     }
 
     @Test
-    void rollbackSiFalla() {
+    void generaIdAlGuardar() {
+        Usuario u = new Usuario();
+        u.setNombre("Carlos");
+
+        Usuario guardado = service.crearUsuario(u);
+
+        assertNotNull(guardado.getId());
+    }
+
+    @Test
+    void listaUsuarios() {
+        service.crearUsuario(new Usuario(null, "Uno"));
+        service.crearUsuario(new Usuario(null, "Dos"));
+
+        assertEquals(2, service.listarUsuarios().size());
+    }
+
+    @Test
+    void rollbackFunciona() {
         Usuario u = new Usuario();
         u.setNombre("error");
 

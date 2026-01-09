@@ -13,6 +13,13 @@ public class Usuario {
     private String nombre;
     private String email;
 
+    public Usuario(Object o, String uno) {
+    }
+
+    public Usuario() {
+    }
+
+
     public Long getId() {
         return id;
     }
