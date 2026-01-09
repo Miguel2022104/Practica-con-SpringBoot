@@ -10,4 +10,7 @@ public class Rol {
     @GeneratedValue
     private int id;
     private String nombre;
+
+    public void setNombre(String nombre) {
+    }
 }
